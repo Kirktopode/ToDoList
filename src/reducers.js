@@ -1,8 +1,9 @@
-import { 
+import {
   ADD_TODO,
   VisibilityFilters,
   TOGGLE_TODO,
-  SET_VISIBILITY_FILTER
+  SET_VISIBILITY_FILTER,
+  TOGGLE_DISPLAY_TIME
 } from './actions'
 import { combineReducers } from 'redux'
 
@@ -10,12 +11,14 @@ const { SHOW_ALL } = VisibilityFilters;
 
 const initialState = {
   visibilityFilter: VisibilityFilters.SHOW_ALL,
-  todos: []
+  todos: [],
+  displayTime: true
 }
 
 const todoApp = combineReducers({
   visibilityFilter,
-  todos
+  todos,
+  displayTime
 })
 
 export default todoApp;
@@ -29,7 +32,16 @@ function visibilityFilter(state = SHOW_ALL, action) {
   }
 }
 
-
+function displayTime(state = true, action){
+  switch(action.type){
+    case TOGGLE_DISPLAY_TIME:
+      //console.log("toggle")
+      //console.log(state)
+      return !state
+    default:
+      return state
+  }
+}
 
 function todos(state = [], action){
   switch(action.type){
@@ -38,7 +50,9 @@ function todos(state = [], action){
         ...state,
         {
           text: action.text,
-          completed: false
+          time: action.time,
+          completed: false,
+          displayTime: true
         }
       ]
     case TOGGLE_TODO:
@@ -54,4 +68,3 @@ function todos(state = [], action){
       return state;
   }
 }
-
