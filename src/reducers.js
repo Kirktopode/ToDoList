@@ -1,10 +1,17 @@
 import {
   ADD_TODO,
+  DELETE_TODO,
+  COPY_TODO,
+  APPEND_TIMESTAMP,
   VisibilityFilters,
   TOGGLE_TODO,
   SET_VISIBILITY_FILTER,
   TOGGLE_DISPLAY_TIME
 } from './actions'
+import {
+  dateString,
+  appendDateString
+} from './timeModule'
 import { combineReducers } from 'redux'
 
 const { SHOW_ALL } = VisibilityFilters;
@@ -50,11 +57,50 @@ function todos(state = [], action){
         ...state,
         {
           text: action.text,
-          time: action.time,
+          time: dateString(),
           completed: false,
           displayTime: true
         }
-      ]
+      ].map((todo, index) => {
+        return Object.assign({}, todo, {
+          key: index
+        })
+      })
+    case DELETE_TODO:
+      return state.filter((todo, index) => {
+        return index != action.index
+      }).map((todo, index) => {
+        return Object.assign({}, todo, {
+          key: index
+        })
+      })
+    case COPY_TODO:
+      let copies = []
+      for(let i = 0; i < action.copies; i++){
+        copies.push({
+          text: state[action.index].text,
+          time: dateString(),
+          completed: false,
+          displayTime: true
+        })
+      }
+      return [
+        ...state,
+        ...copies
+      ].map((todo, index) => {
+        return Object.assign({}, todo, {
+          key: index
+        })
+      })
+    case APPEND_TIMESTAMP:
+      return state.map((todo, index) => {
+        if(index == action.index){
+          return Object.assign({}, todo, {
+            time: todo.time + appendDateString()
+          })
+        }
+        return todo
+      })
     case TOGGLE_TODO:
       return state.map((todo, index) => {
         if(index === action.index){

@@ -18,7 +18,7 @@ const Footer = () => (
       Completed
     </FilterLink>
     <DisplayTime />
-      Time Added
+      Time
   </p>
 )
 

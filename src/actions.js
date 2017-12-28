@@ -6,6 +6,9 @@ export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 export const TOGGLE_DISPLAY_TIME = 'TOGGLE_DISPLAY_TIME'
+export const DELETE_TODO = 'DELETE_TODO'
+export const COPY_TODO = 'COPY_TODO'
+export const APPEND_TIMESTAMP = 'APPEND_TIMESTAMP'
 
 /*
  * other constants
@@ -24,9 +27,30 @@ export const VisibilityFilters = {
 export function addTodo(text, time){
   return{
     type: ADD_TODO,
-    text: text,
-    time: time
+    text: text
   };
+}
+
+export function copyTodo(index, copies){
+  return{
+    type: COPY_TODO,
+    index: index,
+    copies: copies
+  }
+}
+
+export function deleteTodo(index){
+  return {
+    type: DELETE_TODO,
+    index: index
+  }
+}
+
+export function appendTimestamp(index){
+  return {
+    type: APPEND_TIMESTAMP,
+    index: index
+  }
 }
 
 export function toggleTodo(index){
