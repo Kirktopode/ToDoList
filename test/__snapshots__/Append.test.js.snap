@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timestamp is appended properly when the button is clicked. 1`] = `
+<div>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <input />
+      <button
+        type="submit"
+      >
+        Add Todo
+      </button>
+    </form>
+  </div>
+  <ul>
+    <li
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+      >
+        x
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Append Time
+      </button>
+      <span
+        onClick={[Function]}
+      >
+        Test  - Created test time test date
+      </span>
+      <input
+        id="copy-count-0"
+        type="number"
+      />
+      <button
+        onClick={[Function]}
+      >
+        Copy
+      </button>
+    </li>
+  </ul>
+  <p>
+    Show:
+     
+    <span>
+      All
+    </span>
+    , 
+    <a
+      href=""
+      onClick={[Function]}
+    >
+      Active
+    </a>
+    , 
+    <a
+      href=""
+      onClick={[Function]}
+    >
+      Completed
+    </a>
+    <input
+      checked={true}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    Time
+  </p>
+</div>
+`;
+
+exports[`Timestamp is appended properly when the button is clicked. 2`] = `
+<div>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <input />
+      <button
+        type="submit"
+      >
+        Add Todo
+      </button>
+    </form>
+  </div>
+  <ul>
+    <li
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+      >
+        x
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Append Time
+      </button>
+      <span
+        onClick={[Function]}
+      >
+        Test  - Created test time test date - Time Appended test time test date
+      </span>
+      <input
+        id="copy-count-0"
+        type="number"
+      />
+      <button
+        onClick={[Function]}
+      >
+        Copy
+      </button>
+    </li>
+  </ul>
+  <p>
+    Show:
+     
+    <span>
+      All
+    </span>
+    , 
+    <a
+      href=""
+      onClick={[Function]}
+    >
+      Active
+    </a>
+    , 
+    <a
+      href=""
+      onClick={[Function]}
+    >
+      Completed
+    </a>
+    <input
+      checked={true}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    Time
+  </p>
+</div>
+`;

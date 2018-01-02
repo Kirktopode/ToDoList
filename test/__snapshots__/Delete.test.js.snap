@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When the second item from a list of ToDo items is deleted, all of the items remain except for the one that was deleted. 1`] = `
+<div>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <input />
+      <button
+        type="submit"
+      >
+        Add Todo
+      </button>
+    </form>
+  </div>
+  <ul>
+    <li
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+      >
+        x
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Append Time
+      </button>
+      <span
+        onClick={[Function]}
+      >
+        Test0  - Created test time test date
+      </span>
+      <input
+        id="copy-count-0"
+        type="number"
+      />
+      <button
+        onClick={[Function]}
+      >
+        Copy
+      </button>
+    </li>
+    <li
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+      >
+        x
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Append Time
+      </button>
+      <span
+        onClick={[Function]}
+      >
+        Test1  - Created test time test date
+      </span>
+      <input
+        id="copy-count-1"
+        type="number"
+      />
+      <button
+        onClick={[Function]}
+      >
+        Copy
+      </button>
+    </li>
+    <li
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+      >
+        x
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Append Time
+      </button>
+      <span
+        onClick={[Function]}
+      >
+        Test2  - Created test time test date
+      </span>
+      <input
+        id="copy-count-2"
+        type="number"
+      />
+      <button
+        onClick={[Function]}
+      >
+        Copy
+      </button>
+    </li>
+    <li
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+      >
+        x
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Append Time
+      </button>
+      <span
+        onClick={[Function]}
+      >
+        Test3  - Created test time test date
+      </span>
+      <input
+        id="copy-count-3"
+        type="number"
+      />
+      <button
+        onClick={[Function]}
+      >
+        Copy
+      </button>
+    </li>
+    <li
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+      >
+        x
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Append Time
+      </button>
+      <span
+        onClick={[Function]}
+      >
+        Test4  - Created test time test date
+      </span>
+      <input
+        id="copy-count-4"
+        type="number"
+      />
+      <button
+        onClick={[Function]}
+      >
+        Copy
+      </button>
+    </li>
+    <li
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+      >
+        x
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Append Time
+      </button>
+      <span
+        onClick={[Function]}
+      >
+        Test5  - Created test time test date
+      </span>
+      <input
+        id="copy-count-5"
+        type="number"
+      />
+      <button
+        onClick={[Function]}
+      >
+        Copy
+      </button>
+    </li>
+  </ul>
+  <p>
+    Show:
+     
+    <span>
+      All
+    </span>
+    , 
+    <a
+      href=""
+      onClick={[Function]}
+    >
+      Active
+    </a>
+    , 
+    <a
+      href=""
+      onClick={[Function]}
+    >
+      Completed
+    </a>
+    <input
+      checked={true}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    Time
+  </p>
+</div>
+`;
