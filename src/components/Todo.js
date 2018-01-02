@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Todo = ({ onClick, onDeleteClick, onCopyClick, onAppendClick, completed, displayTime, text, time, key, todo, index }) => (
+const Todo = ({ onClick, onDeleteClick, onCopyClick, onAppendClick, completed, displayTime, text, time, index }) => (
   <li
     style={ {
       textDecoration: completed ? 'line-through' : 'none'
@@ -28,9 +28,8 @@ const Todo = ({ onClick, onDeleteClick, onCopyClick, onAppendClick, completed, d
     />
     <button
       onClick = {() => {
-        console.log(index)
         let copies = document.getElementById("copy-count-" + index).value
-        if(isNaN(copies)) copies = 0
+        if(isNaN(copies) || copies < 0) copies = 0
         onCopyClick(copies)
       }}
     >
@@ -47,8 +46,7 @@ Todo.propTypes = {
   completed: PropTypes.bool.isRequired,
   displayTime: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
-  key: PropTypes.number.isRequired
+  time: PropTypes.string.isRequired
 }
 
 export default Todo
