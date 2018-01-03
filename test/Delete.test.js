@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { addTodo,
-         copyTodo
+         deleteTodo
 } from '../src/actions'
 import todoApp from '../src/reducers'
 import App from '../src/components/App'
@@ -45,11 +45,10 @@ test('When the second item from a list of ToDo items is deleted, all of the item
     expect(tree.children[1].children.length).toBe(6)
     expect(tree).toMatchSnapshot()
 
+    //This line works just fine, but replacing click event with dispatch
+    //tree.children[1].children[1].children[0].props.onClick()
+    store.dispatch(deleteTodo(1))
 
-
-    tree.children[0].children[0].children[0].props.value = 3
-    tree.children[0].children[0].props.onSubmit(new Event("test"))
-    tree.children[1].children[1].children[0].props.onClick()
     tree = component.toJSON()
     expect(tree).toMatchSnapshot()
     expect(tree.children[1].children[0].children[2].children[0]).toMatch(/^Test0  -/)

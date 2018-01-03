@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import { addTodo } from '../src/actions'
+import { addTodo, appendTimestamp } from '../src/actions'
 import todoApp from '../src/reducers'
 import App from '../src/components/App'
 import renderer from 'react-test-renderer';
@@ -32,8 +32,10 @@ test('Timestamp is appended properly when the button is clicked.', () =>{
   expect(tree.children[1].children[0].children[2].children[0]).toMatch(/Created test time test date$/)
   expect(tree).toMatchSnapshot()
 
-  //Append timestamp
-  tree.children[1].children[0].children[1].props.onClick()
+  //Append timestamp - This click event works fine, but using dispatch instead
+  //tree.children[1].children[0].children[1].props.onClick()
+  store.dispatch(appendTimestamp(0))
+
   tree = component.toJSON()
   expect(tree).toMatchSnapshot()
   expect(tree.children[1].children[0].children[2].children[0]).toMatch(/Appended test time test date$/)

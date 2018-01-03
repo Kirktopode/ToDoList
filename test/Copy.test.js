@@ -20,6 +20,14 @@ test('When a ToDo is copied three times, there are four ToDo items.', () =>{
       return "test time"
     }
   }})
+  global.document = jest.fn(() => {return {
+    getElementById: () => {
+      console.log("trying mocked getElementById")
+      return {
+        value: 5
+      }
+    }
+  }})
   let store = createStore(todoApp)
   store.dispatch(addTodo("Test"))
   var container = document.createElement('div')
@@ -40,8 +48,8 @@ test('When a ToDo is copied three times, there are four ToDo items.', () =>{
   expect(tree.children[1].children.length).toBe(1)
   expect(tree).toMatchSnapshot()
 
-//  tree.children[1].children[0].children[3].props.value = 3
-//  tree.children[1].children[0].children[4].props.onClick()
+  //tree.children[1].children[0].children[3].props.value = 3
+  //tree.children[1].children[0].children[4].props.onClick()
   store.dispatch(copyTodo(0, 3))
   tree = component.toJSON()
   expect(tree).toMatchSnapshot()
